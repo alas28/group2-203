@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/favi-removebg-preview.png">
+
+
+    <title>Juztin Carl Obien</title>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Jose Rizal: Life, Works, and Writings            </div>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <div class="door-container">
+        <!-- 10 doors with unique designs -->
+        <div class="door" data-modal="1" style="background-image: url('assets/bookcover.webp');">
+            <span class="door-label">1</span>
+        </div>
+        <div class="door" data-modal="2" style="background-image: url('assets/bookcover.webp');">
+            <span class="door-label">2</span>
+        </div>
+        <div class="door" data-modal="3" style="background-image: url('assets/bookcover.webp');">
+            <span class="door-label">3</span>
+        </div>
+        <div class="door" data-modal="4" style="background-image: url('assets/bookcover.webp');">
+            <span class="door-label">4</span>
+        </div>
+        <div class="door" data-modal="5" style="background-image: url('assets/bookcover.webp');">
+            <span class="door-label">5</span>
+        </div>
+        <div class="door" data-modal="6" style="background-image: url('assets/bookcover.webp');">
+            <span class="door-label">6</span>
+        </div>
+        <div class="door" data-modal="7" style="background-image: url('assets/bookcover.webp');">
+            <span class="door-label">7</span>
+        </div>
+        <div class="door" data-modal="8" style="background-image: url('assets/bookcover.webp');">
+            <span class="door-label">8</span>
+        </div>
+        <div class="door" data-modal="9" style="background-image: url('assets/bookcover.webp');">
+            <span class="door-label">9</span>
+        </div>
+        <div class="door" data-modal="10" style="background-image: url('assets/bookcover.webp');">
+            <span class="door-label">10</span>
+        </div>
+    </div>
+
+    <div id="modals" class="modals">
+        <div class="modal-contents">
+            <span class="close">&times;</span>
+            <h2 id="modals-title"></h2>
+            <p id="modal-question"><strong>Question:</strong> </p>
+            <p id="modal-answer"><strong>Answer:</strong> </p>
+        </div>
+    </div>
+    
+    <div class="team-sidebar">
+        <div class="team-member" data-url="homepage1.html">
+            <img src="assets/tatin.png" alt="Juztin Carl Obien">
+        </div>
+        <div class="team-member" data-url="homepage2.html">
+            <img src="assets/edward.png" alt="Renz Edward Empino">
+        </div>
+        <div class="team-member" data-url="homepage3.html">
+            <img src="assets/mj.png" alt="Mary Joyce Rosales">
+        </div>
+        <div class="team-member" data-url="homepage4.html">
+            <img src="assets/britan.png" alt="Alliyah Pauline Britan">
+        </div>
+        <div class="team-member" data-url="homepage5.html">
+            <img src="assets/eze.png" alt="Ezekiel Jaymeson Villarosa">
+        </div>
+    </div>
+    
+    
+
+    <script >
+        
+        document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("modals");
+    const modalTitle = document.getElementById("modals-title");
+    const modalQuestion = document.getElementById("modal-question");
+    const modalAnswer = document.getElementById("modal-answer");
+    const closeModal = document.querySelector(".close");
+
+    // Door descriptions with separate Question and Answer fields
+    const doorDescriptions = {
+        1: {
+            question: "The filmmakers discuss their intent to create a film about José Rizal. What challenges do they anticipate in portraying his life?",
+            answer: "The filmmakers anticipate several challenges in portraying José Rizal’s life. First, they struggle with defining the kind of film they are making, as they feel uncertain about its direction—whether it is serious or just playful (00:06). They also acknowledge the difficulty of questioning Rizal’s status as a hero, fearing backlash for doubting something deeply ingrained in Filipino identity (00:06). Another major challenge is the complexity of Rizal’s story, especially the controversies surrounding his life, such as the retraction issue and his stance on the revolution, which makes it hard to present a clear and definitive narrative (13:02)."
+        },
+        2: {
+            question: "2.	A debate arises about the authenticity of Rizal's retraction document. What are the main arguments presented regarding its validity? ",
+            answer: "The debate about the authenticity of Rizal’s retraction document presents conflicting arguments. One side argues that the document is real, citing its text where Rizal supposedly declares his return to Catholicism and renounces his past writings against the Church (07:30, 13:24). However, doubts arise because the signature on the document is questionable, and even Rizal’s own family never saw the original (07:30, 55:54). Additionally, some believe the document was fabricated by the Church to secure Rizal’s religious obedience before his execution (44:26). The filmmakers also question why Rizal would suddenly renounce his beliefs, especially when he had stood firm in them throughout his life (01:02:18)."
+        },
+        3: {
+            question: "3.	The character of Josephine Bracken is introduced. How does the film depict her relationship with Rizal? ",
+            answer: "The film presents Josephine Bracken’s relationship with Rizal as controversial and uncertain. It raises doubts about whether they were truly married, as there was no signed marriage contract, and Rizal would have needed to formally return to Catholicism before the Church could allow it (41:38). Some characters suggest that Josephine was a scandalous figure who brought trouble to Rizal’s family and disrupted his sense of duty to the country (01:18:51). Additionally, there are insinuations about her background, with claims that she might have been a dancer in Hong Kong before meeting Rizal (34:41). Despite these doubts, Josephine insists that she and Rizal loved each other, but the film leaves their relationship open to interpretation (01:19:37)."
+        },
+        4: {
+            question: "4.	The filmmakers interview a historian about Rizal's alleged retraction. What evidence is provided to support or refute the claim? ",
+            answer: "	The historian presents conflicting evidence regarding Rizal’s alleged retraction. On one hand, the Church claims that Rizal signed a document renouncing his anti-Catholic writings and returning to the faith, with a text stating, 'Ako'y isang Katoliko at sa relihiyong ito nais kong mabuhay at mamatay.'(13:24). However, Rizal’s family never saw the original document, and even his sister, Trining, denied its authenticity, saying that unless the Church could show the actual document, they would not believe it (55:54). Additionally, inconsistencies exist, such as a version of the retraction supposedly written in Dapitan in 1892, even though the final document is dated December 29, 1896, in Manila (44:26). The film suggests that the Church might have forged Rizal’s signature or manipulated the situation to fit their narrative (44:26, 45:40)."
+        },
+        5: {
+            question: "5.	The film presents different portrayals of Rizal’s execution. How does each version differ, and what do these differences suggest?  ",
+            answer: "The film presents multiple portrayals of Rizal’s execution, each with different implications. One version follows the traditional narrative, where Rizal calmly faces the firing squad and dies as a hero, fully accepting his fate (10:18). Another version raises the idea that Rizal’s execution was more complex, questioning whether he showed hesitation, had a rosary in his hands, or even truly accepted his death with peace (13:02). There is also a satirical or exaggerated take, where Rizal’s death is dramatized with cinematic flair, making it seem more like a performance than a historical event (10:18). These differing portrayals suggest that Rizal’s execution, like much of his life, is subject to interpretation, shaped by political, religious, and historical biases."
+        },
+        6: {
+            question: "6.	One of the characters questions whether Rizal was truly a hero. What reasoning do they give to challenge his heroism? ",
+            answer: "One character questions Rizal’s heroism by pointing out his rejection of the revolution, suggesting that a true hero would have actively supported the fight for independence (13:02). They also raise doubts about whether Rizal’s supposed retraction weakened his legacy, as renouncing his beliefs before death could make him seem cowardly or inconsistent (01:02:18). Additionally, they argue that Rizal was turned into a hero by external forces, particularly the government and the Church, rather than through his own revolutionary actions (01:03:15). The film ultimately challenges the idea of heroism itself, asking whether Rizal’s legacy was shaped by historical truth or by selective storytelling (01:28:43)."
+        },
+        7: {
+            question: "7.	A scene features a discussion about Rizal’s religious beliefs. How does the film depict his stance on faith and the Catholic Church?  ",
+            answer: "The film portrays Rizal’s religious beliefs as complex and evolving. In his youth, he was a devoted Catholic, but over time, he became critical of the Church, especially its abuses in the Philippines (14:03). His letters suggest that he believed in reason and free thought, rejecting blind obedience to religious authority (22:28). The retraction controversy complicates this, as some claim he returned to Catholicism before his death, while others argue this was fabricated by the Church (13:24, 55:54). The film ultimately leaves Rizal’s true stance open to interpretation, showing both his criticism of the Church and the possibility of a final reconciliation (01:13:24). "
+        },
+        8: {
+            question: "8.	The film uses a unique narrative style, including fictionalized conversations with Rizal. How does this technique affect storytelling?  ",
+            answer: "The film’s use of fictionalized conversations with Rizal creates a detective-like investigation, making the storytelling more engaging and thought-provoking (10:18). By allowing the filmmakers to 'interview' Rizal, the narrative explores different interpretations of his life, challenging historical assumptions and myths (13:02). This technique also highlights the uncertainty surrounding key events, such as the retraction controversy and his relationship with Josephine Bracken, encouraging the audience to question what they believe about Rizal (01:23:48). Overall, it makes the film less of a straightforward biography and more of an exploration of historical truth and how it is constructed (01:28:43) "
+        },
+        9: {
+           question: "9.	At one point, the filmmakers express frustration with their research on Rizal. What specific issue causes this frustration? ",
+            answer: "The filmmakers become frustrated with their research on Rizal because many key events in his life, particularly the retraction controversy, remain unresolved and filled with contradictions (45:40). They struggle with the lack of definitive proof, such as the missing original retraction document and conflicting testimonies from historians and Rizal’s family (55:54). They also realize that Rizal’s story has been shaped by different agendas, making it difficult to separate fact from manipulation (01:22:51). This uncertainty makes them question whether their film can present a clear and truthful portrayal of Rizal (01:28:43). "
+        },
+        10: {
+            question: "10.	The film concludes with a reflection on Rizal's legacy. How do the filmmakers interpret his impact on contemporary Philippine society? ",
+            answer: "The filmmakers interpret Rizal’s legacy as both enduring and problematic. They acknowledge that he remains the national hero, immortalized in monuments, money, and history books, but they also question whether his image has been manipulated to fit different narratives (01:27:35). They express doubt about whether his ideals are still relevant today, especially since the issues he fought against—corruption, inequality, and ignorance—still persist (01:28:43). The film ultimately suggests that Rizal’s heroism is not a simple, unquestionable truth but a complex, evolving idea shaped by those who tell his story (01:30:46)."
+        },
+    };
+
+    // Add event listeners to each door
+    document.querySelectorAll(".door").forEach(door => {
+        door.addEventListener("click", () => {
+            const doorNumber = door.getAttribute("data-modal");
+            const content = doorDescriptions[doorNumber];
+
+            // Update modal content
+            modalTitle.textContent = "";
+            modalQuestion.innerHTML = `<p class="question-header">Question</p>${content?.question || "Unknown Question"}`;
+            modalAnswer.innerHTML = `<p class="answer-header">Answer</p>${content?.answer || "Unknown Answer"}`;
+
+            // Show the modal
+            modal.style.display = "flex";
+        });
+    });
+
+    // Close modal when clicking on the close button
+    closeModal.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    // Close modal when clicking outside the modal content
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const members = document.querySelectorAll(".team-member");
+    const currentPage = window.location.pathname.split("/").pop();
+
+    members.forEach(member => {
+        if (member.getAttribute("data-url") === currentPage) {
+            member.classList.add("active");
+        }
+
+        member.addEventListener("click", () => {
+            window.location.href = member.getAttribute("data-url");
+        });
+    });
+});
+
+</script>
+
+    </script>
+
+</body>
+</html>

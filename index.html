@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rizal Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/favi-removebg-preview.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Cinzel+Decorative:wght@400;700&family=Almendra+SC&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Jose Rizal: Life, Works, and Writings            </div>
+            <ul id="nav-links">
+                <li><a href="#video-container">Home</a></li>
+                <li><a href="#book">Bayaning 3rd World</a></li>
+                <li><a href="#lesson">Lesson</a></li>
+                <li><a href="#members">Members</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Video Section -->
+    <div id="video-container">
+        <video id="background-video" autoplay loop muted>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+        <div id="video-overlay">
+            <h2>Bayaning 3rd World</h2>
+            <p>A bold reexamination of Rizal’s heroism and the retraction controversy</p>
+        </div>
+    </div>
+
+    <!-- Flipbook and Old Letter Container -->
+    <div class="flipbook-container">
+        <!-- Flipbook Section -->
+        <div class="book-container">
+            <button id="prev" class="nav-button">⬅</button>
+            <div id="book">
+                <div class="page cover">
+                    Bayaning <br> 3rd World
+                    <button id="open-book">Open Book</button>
+                </div>
+                <div class="page">
+                    <h2>The Filmmakers Dilemma</h2>
+                    <p>Time: 00:02:30 – 00:07:00</p>
+                    <img src="assets/dilemma.PNG" alt="Chapter 1 Image" class="page-image">
+                </div>
+                <div class="page">
+                    <h2> Interview with the Experts</h2>
+                    <p>Time: 00:12:00 – 00:18:30</p>
+                    <img src="assets/interview.PNG" alt="Chapter 2 Image" class="page-image">
+                </div>
+                <div class="page">
+                    <h2>The Retraction Controversy</h2>
+                    <p>Time: 00:21:45 – 00:30:15</p>
+                    <img src="assets/retraction.PNG" alt="Chapter 3 Image" class="page-image">
+                </div>
+                <div class="page">
+                    <h2>Rizal and Josephine: Love or Duty?</h2>
+                    <p>Time: 00:35:00 – 00:40:20</p>
+                    <img src="assets/loveorduty.PNG" alt="Chapter 4 Image" class="page-image">
+                </div>
+                <div class="page">
+                    <h2>Confronting Narcisa: Biktima nga ba si Pepe?</h2>
+                    <p>Time: 47:41-55:33</p>
+                    <img src="assets/narcisa.PNG" alt="Chapter 5 Image" class="page-image">
+                </div>
+                <div class="page">
+                    <h2>The Retraction Letter Is it Real or Fake? </h2>
+                    <p>Time: 00:55:49 – 01:04:30</p>
+                    <img src="assets/realorfake.PNG" alt="Chapter 6 Image" class="page-image">
+                </div>
+                <div class="page">
+                    <h2>Rizal’s Last Night in Fort Santiago </h2>
+                    <p>Time: 01:08:30 – 01:15:00</p>
+                    <img src="assets/lastday.PNG" alt="Chapter 7 Image" class="page-image">
+                </div>
+                <div class="page">
+                    <h2>The Trial and Execution Sentence</h2>
+                    <p>Time: 01:15:00 – 01:20:00</p>
+                    <img src="assets/exec.PNG" alt="Chapter 8 Image" class="page-image">
+                </div>
+                <div class="page">
+                    <h2>A Nation’s Endless Debate</h2>
+                    <p>Time: 01:25:00 – 01:30:00</p>
+                    <img src="assets/nation.PNG" alt="Chapter 9 Image" class="page-image">
+                    <button id="close-book">Close Book</button>
+
+                </div>
+            </div>
+            <button id="next" class="nav-button">➡</button>
+        </div>
+
+        <!-- Old Letter Section -->
+        <div class="old-letter">
+            <p class="letter-text" data-text='Bayaning 3rd World (2000) is a Filipino film directed by Mike de Leon. It’s a metafictional and investigative take on the life and legacy of José Rizal, the Philippines’ national hero.
+                
+                The film follows two filmmakers who are trying to make a movie about Rizal but struggle with the many contradictions and myths surrounding his life.
+                
+                It explores themes of nationalism, historical revisionism, and identity, especially questioning whether Rizal truly retracted his writings against the Spanish Catholic Church before his execution.
+                
+                The film uses a mix of documentary-style interviews, dramatized reenactments, and a self-aware, postmodern approach to storytelling.'>
+            </p>
+        </div>
+    </div>
+    <br id="lesson">
+<br >
+    <h1>Rizal's Family, Childhood, and Early Education</h1>
+
+    <!-- Card Section -->
+    <div class="card-container">
+        <div class="card" data-title="Young José Rizal Reading with His Mother" data-text="A warm scene of Teodora Alonso Realonda teaching young Rizal how to read in their home library." data-img="assets/image1.jpg">
+            <img src="assets/card1.webp" alt="Card Image">
+        </div>
+        <div class="card" data-title="Rizal’s Father, Francisco Mercado Rizal" data-text="A dignified portrait of Francisco Rizal, a strong and disciplined man.A model of fathers" data-img="assets/image2.jpg">
+            <img src="assets/card2.webp" alt="Card Image">
+        </div>
+        <div class="card" data-title="Paciano Rizal as a Mentor" data-text="Paciano Rizal discussing nationalist ideas with young José in Biñan, acting as both a brother and a father figure." data-img="assets/image3.jpg">
+            <img src="assets/card3.webp" alt="Card Image">
+        </div>
+        <div class="card" data-title="The Arrest of Teodora Alonso" data-text="A dramatic scene showing Teodora Alonso being forcibly taken away, walking 50 km to Santa Cruz, while young Rizal watches in sorrow.
+        " data-img="assets/image4.jpg">
+            <img src="assets/card4.webp" alt="Card Image">
+        </div>
+        <div class="card" data-title="Rizal’s Uncles as Influencers" data-text="A gathering of José Alberto, Manuel Alberto, and Gregorio Alberto, each imparting their unique knowledge to young Rizal " data-img="assets/image5.jpg">
+            <img src="assets/card5.webp" alt="Card Image">
+        </div>
+        <div class="card" data-title="Rizal’s First School in Biñan" data-text="A classroom setting with young Rizal studying under a Maestro Justiniano Aquino Cruz, surrounded by classmates, depicting the strict but formative nature of his early education." data-img="assets/image6.jpg">
+            <img src="assets/card6.webp" alt="Card Image">
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-image" src="assets/card 1.webp" alt="Modal Image">
+            <div class="modal-text">
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+            </div>
+        </div>
+    </div>
+    <h1 id="members">MEMBERS</h1>
+
+    <div class="members-container">
+        <div class="member-card" data-url="homepage1.html">
+            <img src="assets/tatin.png" alt="Member 1">
+            <div class="hover-text">Juztin Carl Obien</div>
+        </div>
+        <div class="member-card" data-url="homepage2.html">
+            <img src="assets/edward.png" alt="Member 2">
+            <div class="hover-text">Renz Edward Empino</div>
+        </div>
+        <div class="member-card" data-url="homepage3.html">
+            <img src="assets/mj.png" alt="Member 3">
+            <div class="hover-text">Mary Joyce Rosales</div>
+        </div>
+        <div class="member-card" data-url="homepage4.html">
+            <img src="assets/britan.png" alt="Member 4">
+            <div class="hover-text">Alliyah Pauline Britan</div>
+        </div>
+        <div class="member-card" data-url="homepage5.html">
+            <img src="assets/eze.png" alt="Member 5">
+            <div class="hover-text">Ezekiel Jaymeson Villarosa</div>
+        </div>
+    </div>
+    
+
+    
+    <!-- Magic Effect -->
+    <canvas id="magic-effect"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>

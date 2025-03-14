@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/favi-removebg-preview.png">
+
+    <title>Mary Joyce Rosales</title>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Jose Rizal: Life, Works, and Writings            </div>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <div class="door-container">
+        <!-- 10 doors with unique designs -->
+        <div class="door" data-modal="1" style="background-image: url('assets/bookcover3.png');">
+            <span class="door-label">1</span>
+        </div>
+        <div class="door" data-modal="2" style="background-image: url('assets/bookcover3.png');">
+            <span class="door-label">2</span>
+        </div>
+        <div class="door" data-modal="3" style="background-image: url('assets/bookcover3.png');">
+            <span class="door-label">3</span>
+        </div>
+        <div class="door" data-modal="4" style="background-image: url('assets/bookcover3.png');">
+            <span class="door-label">4</span>
+        </div>
+        <div class="door" data-modal="5" style="background-image: url('assets/bookcover3.png');">
+            <span class="door-label">5</span>
+        </div>
+        <div class="door" data-modal="6" style="background-image: url('assets/bookcover3.png');">
+            <span class="door-label">6</span>
+        </div>
+        <div class="door" data-modal="7" style="background-image: url('assets/bookcover3.png');">
+            <span class="door-label">7</span>
+        </div>
+        <div class="door" data-modal="8" style="background-image: url('assets/bookcover3.png');">
+            <span class="door-label">8</span>
+        </div>
+        <div class="door" data-modal="9" style="background-image: url('assets/bookcover3.png');">
+            <span class="door-label">9</span>
+        </div>
+        <div class="door" data-modal="10" style="background-image: url('assets/bookcover3.png');">
+            <span class="door-label">10</span>
+        </div>
+    </div>
+
+    <div id="modals" class="modals">
+        <div class="modal-contents">
+            <span class="close">&times;</span>
+            <h2 id="modals-title"></h2>
+            <p id="modal-question"><strong>Question:</strong> </p>
+            <p id="modal-answer"><strong>Answer:</strong> </p>
+        </div>
+    </div>
+    <div class="team-sidebar">
+        <div class="team-member" data-url="homepage1.html">
+            <img src="assets/tatin.png" alt="Juztin Carl Obien">
+        </div>
+        <div class="team-member" data-url="homepage2.html">
+            <img src="assets/edward.png" alt="Renz Edward Empino">
+        </div>
+        <div class="team-member" data-url="homepage3.html">
+            <img src="assets/mj.png" alt="Mary Joyce Rosales">
+        </div>
+        <div class="team-member" data-url="homepage4.html">
+            <img src="assets/britan.png" alt="Alliyah Pauline Britan">
+        </div>
+        <div class="team-member" data-url="homepage5.html">
+            <img src="assets/eze.png" alt="Ezekiel Jaymeson Villarosa">
+        </div>
+    </div>
+    
+
+    <script >
+        
+        document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("modals");
+    const modalTitle = document.getElementById("modals-title");
+    const modalQuestion = document.getElementById("modal-question");
+    const modalAnswer = document.getElementById("modal-answer");
+    const closeModal = document.querySelector(".close");
+
+    // Door descriptions with separate Question and Answer fields
+    const doorDescriptions = {
+        1: {
+            question: "The filmmakers discuss their intent to create a film about José Rizal. What challenges do they anticipate in portraying his life?",
+            answer: "The filmmakers anticipate significant challenges in portraying José Rizal's life due to the complexities and nuances of his character. They recognize that Rizal is a national hero, but his life is filled with gray areas that make it difficult to create a straightforward narrative. They express that capturing the essence of Rizal's life is not merely about recounting events but understanding the deeper implications of his actions and beliefs. This complexity is highlighted by their acknowledgment that nothing is taken for granted in their depiction of him as a national figure. (Timestamp: 00:05:30)"
+        },
+        2: {
+            question: "2.	A debate arises about the authenticity of Rizal's retraction document. What are the main arguments presented regarding its validity? ",
+            answer: "The authenticity of Rizal's retraction document is hotly debated, with arguments on both sides. Critics argue that the document is questionable because it was not signed by Rizal, raising doubts about its legitimacy. Some historians point out that the document's existence is tied to the circumstances surrounding Rizal's execution, suggesting it may have been fabricated or altered. Conversely, proponents of the document's authenticity claim that it reflects Rizal's true sentiments at the end of his life, despite the lack of a signature. (Timestamp: 00:12:45) "
+        },
+        3: {
+            question: "3.	The character of Josephine Bracken is introduced. How does the film depict her relationship with Rizal? ",
+            answer: "Josephine Bracken is depicted as a significant figure in Rizal's life, embodying both love and conflict. The film portrays her as someone who feels inadequate in the shadow of Rizal's national hero status, expressing sentiments of embarrassment and longing for acceptance. Their relationship is characterized by deep emotional ties, but also by the societal pressures that come with Rizal's fame. Josephine's struggles highlight the personal sacrifices made in the name of love and national identity. (Timestamp: 00:20:15) "
+        },
+        4: {
+            question: "4.	The filmmakers interview a historian about Rizal's alleged retraction. What evidence is provided to support or refute the claim? ",
+            answer: "	In an interview with a historian, various pieces of evidence are presented regarding the alleged retraction. The historian discusses the existence of documents that suggest Rizal did not formally retract his earlier writings against the Church, casting doubt on the retraction's authenticity. They emphasize the importance of context and the political climate at the time, suggesting that any retraction may have been coerced or misrepresented. (Timestamp: 00:25:00) "
+        },
+        5: {
+            question: "5.	The film presents different portrayals of Rizal’s execution. How does each version differ, and what do these differences suggest?  ",
+            answer: "The film presents multiple portrayals of Rizal's execution, each emphasizing different aspects of the event. Some versions depict him as a martyr, highlighting his calm demeanor and resolve, while others focus on the chaotic nature of the execution itself, suggesting a more brutal reality. These differences in portrayal reflect the varying interpretations of Rizal's legacy and the impact of his death on the Philippine revolution. (Timestamp: 00:30:45) "
+        },
+        6: {
+            question: "6.	One of the characters questions whether Rizal was truly a hero. What reasoning do they give to challenge his heroism? ",
+            answer: "	One character challenges Rizal's heroism by questioning the effectiveness of his methods. They argue that while Rizal was a brilliant thinker and writer, his approach was more intellectual than revolutionary, suggesting that he did not take the necessary actions to incite real change. This perspective raises important discussions about the nature of heroism and the criteria by which we judge historical figures. (Timestamp: 00:35:10) "
+        },
+        7: {
+            question: "7.	A scene features a discussion about Rizal’s religious beliefs. How does the film depict his stance on faith and the Catholic Church?  ",
+            answer: "The film depicts Rizal's religious beliefs as complex and evolving. He is shown grappling with his faith and the Catholic Church, often expressing skepticism about its role in society. This portrayal suggests that Rizal sought a more personal understanding of spirituality, separate from institutional dogma, which reflects his broader quest for truth and justice. (Timestamp: 00:40:00) "
+        },
+        8: {
+            question: "8.	The film uses a unique narrative style, including fictionalized conversations with Rizal. How does this technique affect storytelling?  ",
+            answer: "The unique narrative style, including fictionalized conversations with Rizal, enhances the storytelling by providing a more intimate glimpse into his thoughts and feelings. This technique allows the filmmakers to explore Rizal's character in a way that traditional biographical methods might not capture, making his struggles and ideals more relatable to the audience. (Timestamp: 00:45:30) "
+        },
+        9: {
+           question: "9.	At one point, the filmmakers express frustration with their research on Rizal. What specific issue causes this frustration? ",
+            answer: "The filmmakers express frustration with their research due to the conflicting accounts and lack of concrete evidence regarding certain aspects of Rizal's life. They find it challenging to navigate the myriad interpretations and historical narratives, which complicates their efforts to present an accurate portrayal of Rizal. (Timestamp: 00:50:15) "
+        },
+        10: {
+            question: "10.	The film concludes with a reflection on Rizal's legacy. How do the filmmakers interpret his impact on contemporary Philippine society? ",
+            answer: "The film concludes with a reflection on Rizal's legacy, interpreting his impact on contemporary Philippine society as profound yet complex. The filmmakers suggest that Rizal's ideals continue to resonate, inspiring new generations to seek justice and national identity, while also acknowledging the ongoing struggles faced by the Philippines. (Timestamp: 00:55:00)"
+        },
+    };
+
+    // Add event listeners to each door
+    document.querySelectorAll(".door").forEach(door => {
+        door.addEventListener("click", () => {
+            const doorNumber = door.getAttribute("data-modal");
+            const content = doorDescriptions[doorNumber];
+
+            // Update modal content
+            modalTitle.textContent = "";
+            modalQuestion.innerHTML = `<p class="question-header">Question</p>${content?.question || "Unknown Question"}`;
+            modalAnswer.innerHTML = `<p class="answer-header">Answer</p>${content?.answer || "Unknown Answer"}`;
+
+            // Show the modal
+            modal.style.display = "flex";
+        });
+    });
+
+    // Close modal when clicking on the close button
+    closeModal.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    // Close modal when clicking outside the modal content
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const members = document.querySelectorAll(".team-member");
+    const currentPage = window.location.pathname.split("/").pop();
+
+    members.forEach(member => {
+        if (member.getAttribute("data-url") === currentPage) {
+            member.classList.add("active");
+        }
+
+        member.addEventListener("click", () => {
+            window.location.href = member.getAttribute("data-url");
+        });
+    });
+});
+
+
+    </script>
+
+</body>
+</html>

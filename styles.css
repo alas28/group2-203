@@ -1,0 +1,835 @@
+body {
+    background: url('assets/image.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    margin: 0;
+    padding-top: 70px; /* Prevents navbar overlap */
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+#navbar {
+    width: 100%;
+    background: url('assets/image.png') no-repeat center/cover;
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border-bottom: 3px solid #552D0A;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+/* Navbar Container */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Logo */
+.logo {
+    font-family: 'Cinzel Decorative', serif;
+    color: #552D0A;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navbar Links */
+#nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+#nav-links li {
+    margin: 0;
+}
+
+#nav-links li a {
+    font-size: 18px;
+    font-family: 'Cinzel', serif;
+    color: #552D0A;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+#nav-links li a:hover {
+    background: rgba(85, 45, 10, 0.7);
+    color: #FFD700;
+    text-shadow: 0px 0px 5px rgba(255, 215, 0, 0.8);
+    transform: scale(1.1);
+}
+
+/* 📌 Video Container */
+#video-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    z-index: 10;
+    margin-top: 20px;
+}
+
+#background-video {
+    width: 105%;
+    height: auto;
+    bottom: 20px;
+    right: 20px;
+    display: block;
+    border-radius: 10px;
+    position: relative;
+    box-shadow:
+        0 0 30px rgba(255, 220, 120, 0.9),
+        /* Outer glow */
+        0 0 60px rgba(255, 160, 50, 0.8),
+        /* Middle glow */
+        0 0 100px rgba(255, 100, 20, 0.7);
+    /* Inner glow */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* More dynamic glow animation */
+@keyframes intense-magical-glow {
+    0% {
+        box-shadow:
+            0 0 40px rgba(255, 240, 150, 1),
+            0 0 80px rgba(255, 180, 60, 0.9),
+            0 0 120px rgba(255, 120, 30, 0.8);
+    }
+
+    50% {
+        box-shadow:
+            0 0 60px rgba(255, 250, 180, 1),
+            0 0 100px rgba(255, 200, 80, 0.9),
+            0 0 150px rgba(255, 140, 40, 0.85);
+    }
+
+    100% {
+        box-shadow:
+            0 0 40px rgba(255, 240, 150, 1),
+            0 0 80px rgba(255, 180, 60, 0.9),
+            0 0 120px rgba(255, 120, 30, 0.8);
+    }
+}
+
+#background-video:hover {
+    animation: intense-magical-glow 2s infinite alternate ease-in-out;
+}
+
+#video-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-family: 'IM Fell English SC', 'Cinzel Decorative', serif;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 0px 0px 10px rgba(255, 223, 0, 0.9), 0px 0px 20px rgba(255, 140, 0, 0.7);
+
+}
+
+/* Flipbook & Old Letter Container */
+.flipbook-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+    padding-bottom: 60px;
+}
+
+/* Flipbook Section (Left) */
+.book-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Book */
+#book {
+    width: 400px;
+    height: 500px;
+    position: relative;
+    perspective: 1200px;
+    z-index: 21;
+    font-family: 'Uncial Antiqua', 'Cinzel Decorative', 'Almendra SC', serif;
+    font-size: 20px;
+    color: #000000;
+    text-shadow: 2px 2px 8px rgba(255, 223, 100, 0.8);
+    /* Magical glow */
+}
+
+/* Pages */
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('assets/pages.jpg') no-repeat center center/cover;
+    border: 3px solid #552D0A;
+    border-radius: 5px;
+    transform-origin: left center;
+    transition: transform 1s ease-in-out, z-index 0.6s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.cover {
+    background: url('assets/book.jpg') no-repeat center center/cover;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Keep it centered, but shift with padding */
+    padding-left: 20px;
+    /* Move text slightly to the left */
+    font-family: 'Cinzel Decorative', serif;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 0px 0px 10px rgba(255, 223, 0, 0.9), 0px 0px 20px rgba(255, 140, 0, 0.7);
+}
+
+
+/* Page Images */
+.page-image {
+    width: 80%;
+    max-height: 250px;
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.page.visible .page-image {
+    opacity: 1;
+    transform: scale(1);
+}
+/* Close Book Button */
+#close-book {
+    position: absolute;
+    margin-top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background:  linear-gradient(180deg, #5a2a0a 0%, #251002 100%);
+    color: #ffbb33;
+    border: 2px solid #5a2a0a ;
+    padding: 10px 20px;
+    font-family: 'Almendra SC', serif;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 166, 1, 0.863);
+    transition: all 0.3s ease;
+    display: none;
+}
+
+/* Hover effect */
+#close-book:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+
+/* Show Close Book Button when on the last page */
+.page:last-child.visible #close-book {
+    display: block;
+}
+
+/* 📜 Old Letter Styling */
+.old-letter {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    max-width: 600px;
+    /* Increased width for better readability */
+    padding: 25px;
+    border: 3px solid #8B5A2B;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 215, 150, 0.3),
+        0px 0px 30px rgba(255, 140, 0, 0.2);
+    position: relative;
+    margin-left: 30px;
+    min-height: 300px;
+    /* Ensures parchment doesn't shrink */
+}
+
+
+/* ✨ Magical Text Styling */
+.letter-text {
+    font-family: 'Uncial Antiqua', 'Almendra SC', serif;
+    font-size: 15px;
+    color: #000000;
+    /* Gold-ink effect */
+    text-shadow: 1px 1px 3px rgba(255, 223, 150, 0.5),
+        0px 0px 10px rgba(255, 185, 55, 0.3);
+    padding: 15px;
+    border-radius: 8px;
+    min-height: 40px;
+    white-space: pre-wrap;
+    overflow: hidden;
+    max-width: 80%;
+    text-align: justify;
+    margin: 10px auto;
+    position: relative;
+}
+
+/* ✨ Typing Cursor Glow */
+.letter-text::after {
+    content: "𓂃🖊";
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.9);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6);
+    animation: flicker 0.5s infinite alternate;
+    margin-left: 5px;
+}
+
+/* 🔥 Flickering Effect for Glow */
+@keyframes flicker {
+    0% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0.4;
+        transform: scale(1.2);
+    }
+}
+
+/* 📜 Soft Scrollable Paper Shadow */
+.old-letter {
+    overflow: hidden;
+    position: relative;
+}
+
+.old-letter::before,
+.old-letter::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent);
+    left: 0;
+    z-index: 5;
+}
+
+.old-letter::before {
+    top: 0;
+}
+
+.old-letter::after {
+    bottom: 0;
+    transform: rotate(180deg);
+}
+
+
+/* Navigation Buttons */
+.nav-button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 18px;
+    padding: 8px 10px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 22;
+    display: none;
+    /* Hide buttons initially */
+}
+
+/* Position buttons closer to the book */
+#prev {
+    left: 1px;
+    /* Reduced spacing */
+}
+
+#next {
+    right: -2px;
+    /* Reduced spacing */
+}
+
+/* Ensure buttons only appear after opening the book */
+#book.opened .nav-button {
+    display: block;
+}
+
+
+/* Old Letter Section (Right) */
+.old-letter {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.letter-image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Open Book Button */
+#open-book {
+    position: absolute;
+    margin-top: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, #ffdd55 0%, #ffbb33 100%);
+    color: #5a2a0a;
+    border: 2px solid #ffbb33;
+    padding: 10px 20px;
+    font-family: 'Almendra SC', serif;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 223, 0, 0.8);
+    transition: all 0.3s ease;
+}
+
+#open-book:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+
+
+/* Magic Effect */
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .flipbook-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book-container {
+        justify-content: center;
+    }
+
+    .nav-button {
+        top: auto;
+        bottom: -40px;
+        /* Moves buttons below the book on small screens */
+        position: relative;
+    }
+
+    #prev {
+        left: 0;
+        margin-right: 10px;
+    }
+
+    #next {
+        right: 0;
+        margin-left: 10px;
+    }
+
+    .old-letter {
+        margin-top: 20px;
+    }
+}
+.team-sidebar {
+    position: fixed;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.team-member img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease-in-out, transform 0.2s;
+    cursor: pointer;
+}
+
+.team-member img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+.card::after {
+    content: "Learn More";
+    position: absolute;
+    bottom: 125px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 223, 100, 0.9);
+    color: #5a2a0a;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Show "Learn More" on hover */
+.card:hover::after {
+    opacity: 1;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: rgba(32, 18, 5, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    max-width: 600px;
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.7);
+    align-items: center;
+}
+
+.modal img {
+    max-width: 250px;
+    border-radius: 10px;
+    margin-right: 20px;
+    box-shadow: 0 0 10px rgba(255, 223, 186, 0.8);
+}
+
+.modal-text {
+    text-align: left;
+    color: #fff8dc;
+    font-family: "Cinzel Decorative", serif;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+.close:hover {
+    color: #f8b400;
+}
+
+
+h1 {
+    font-family: 'Uncial Antiqua', serif;
+    /* Mystical old-style font */
+    font-size: 32px;
+    color: #2c2727;
+    /* Warm golden tone */
+    text-shadow: 2px 2px 10px rgba(255, 223, 150, 0.8),
+        0px 0px 15px rgba(255, 180, 50, 0.6);
+    text-align: center;
+    background: linear-gradient(to right, rgba(139, 69, 19, 0.8), rgba(255, 215, 150, 0.3));
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 3px solid #8B4513;
+    /* Deep brown border */
+    box-shadow: 0px 0px 15px rgba(255, 165, 0, 0.3);
+    width: fit-content;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glowing Rune Effect */
+h1::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 5px;
+    height: 80%;
+    background: rgba(255, 200, 50, 0.8);
+    box-shadow: 0px 0px 10px rgba(255, 223, 0, 0.8);
+    transform: translateY(-50%);
+    animation: glowingRune 2s infinite alternate ease-in-out;
+}
+
+@keyframes glowingRune {
+    from {
+        left: 0;
+        opacity: 0.5;
+    }
+
+    to {
+        left: 100%;
+        opacity: 1;
+    }
+}
+
+.members-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.member-card {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Grayscale effect on images */
+.member-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Remove grayscale and add scaling on hover */
+.member-card:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.10);
+}
+
+/* Click effect */
+.member-card:active {
+    transform: scale(0.95);
+}
+
+/* Hover Text */
+.member-card .hover-text {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffd700;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+/* Show text on hover */
+.member-card:hover .hover-text {
+    opacity: 1;
+}
+
+
+.door-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 50px; /* Space between doors */
+    justify-content: center;
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+.door {
+    width: 140px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: transform 0.3s, filter 0.3s;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.door-label {
+    position:absolute;
+    bottom: 80px;
+    left: 53%;
+    transform: translateX(-50%);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: rgb(0, 0, 0);
+    color: #ffe600;
+    padding: 5px 10px;
+    border-radius: 100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+/* Show text/number on hover */
+.door:hover .door-label {
+    opacity: 1;
+}
+
+/* Hover Effect - Glow */
+.door:hover {
+    filter: brightness(1.5) drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+    transform: scale(1.05);
+}
+
+.modals {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(204, 174, 131, 0.9) 10%, rgba(60, 40, 20, 0.8) 85%);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-contents {
+    background: url('assets/image.png') no-repeat center/cover;
+
+    padding: 30px;
+    width: 60%;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: "Merriweather", serif;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 50px;
+    right:310px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #000000;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: #fffb00;
+}
+
+/* Modal Title */
+#modals-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+/* Question and Answer Styling */
+#modal-question, #modal-answer {
+    font-size: 18px;
+    color: #2c3e50;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Headers for Question and Answer */
+.question-header, .answer-header {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #000000; /* Elegant purple */
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .modal-contents {
+        width: 90%;
+        padding: 20px;
+    }
+    #modal-question, #modal-answer {
+        font-size: 16px;
+    }
+}
